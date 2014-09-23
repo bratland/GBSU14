@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace BankMedArv
 {
-    public class BankAccount
+    public abstract class BankAccount
     {
+        public abstract decimal Interest { get; set; }
+
         public decimal Balance { get; set; }
 
         public int Id { get; set; }
@@ -22,9 +24,11 @@ namespace BankMedArv
             Balance -= amount;
         }
 
-        public virtual decimal CalculateInterest()
+        public abstract decimal CalculateInterest();
+
+        public override string ToString()
         {
-            return 0.0m;
+            return "Balance: " + Balance;
         }
     }
 }

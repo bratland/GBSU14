@@ -7,9 +7,20 @@ namespace BankMedArv
 {
     public class CheckingAccount : BankAccount
     {
+        public CheckingAccount()
+        {
+            Interest = 0.02m;
+        }
+        public override decimal Interest { get; set; } 
+
         public override decimal CalculateInterest()
         {
-            return 0.02m*Balance;
+            return Interest * Balance;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + " Interest: " + Interest ;
         }
     }
 }
