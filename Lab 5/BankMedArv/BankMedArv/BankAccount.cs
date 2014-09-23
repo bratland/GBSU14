@@ -2,8 +2,6 @@
 {
     public abstract class BankAccount
     {
-        public abstract decimal Interest { get; set; }
-
         public decimal Balance { get; set; }
 
         public int Id { get; set; }

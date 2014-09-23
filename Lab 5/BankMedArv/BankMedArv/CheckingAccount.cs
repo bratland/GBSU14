@@ -11,7 +11,7 @@ namespace BankMedArv
         {
             Interest = 0.02m;
         }
-        public override decimal Interest { get; set; } 
+        public static decimal Interest { get; set; } 
 
         public override decimal CalculateInterest()
         {

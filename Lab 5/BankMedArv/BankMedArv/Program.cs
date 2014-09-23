@@ -12,16 +12,13 @@ namespace BankMedArv
         {
             //BankAccount account = new BankAccount();
             //account.Deposit(100);
+            var accounts = AccountFactory.Create();
 
-            BankAccount account2 = new SavingsAccount();
-            account2.Deposit(100);
 
-            BankAccount account3 = new CheckingAccount();
-            account3.Deposit(100);
-
-            //DisplayAccountInformation(account);
-            DisplayAccountInformation(account2);
-            DisplayAccountInformation(account3);
+            foreach (var bankAccount in accounts)
+            {
+                DisplayAccountInformation(bankAccount);
+            }
 
             Console.ReadLine();
 

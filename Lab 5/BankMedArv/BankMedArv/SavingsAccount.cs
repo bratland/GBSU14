@@ -19,6 +19,6 @@
             return base.ToString() + " Interest: " + Interest + " TotSavings: " + TotalSavings;
         }
 
-        public override decimal Interest { get; set; }
+        public static decimal Interest { get; set; }
     }
 }
