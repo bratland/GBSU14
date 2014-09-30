@@ -20,6 +20,10 @@ namespace IDemo
             bankAccount2.Balance = 100m;
             bankAccount2.Witdraw(50m);
 
+            var loggers = new List<ILogger>();
+            loggers.Add(fileLogger);
+            loggers.Add(consoleLogger);
+
             var accounts = new List<BankAccount>();
             accounts.Add(bankAccount1);
             accounts.Add(bankAccount2);
@@ -41,7 +45,12 @@ namespace IDemo
                 Console.WriteLine("Key: " + item.Key + " value: " + item.Value.Balance);
             }
 
+            Console.WriteLine(accountDictionary[1].Balance);
             Console.ReadLine();
+
         }
+
+        public class Raion
+        { }
     }
 }
