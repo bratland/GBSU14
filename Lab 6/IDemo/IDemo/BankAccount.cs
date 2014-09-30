@@ -8,11 +8,14 @@ namespace IDemo
 {
     public class BankAccount
     {
+        public int AccountId { get; set; }
+
         private readonly ILogger _logger;
 
-        public BankAccount(ILogger logger)
+        public BankAccount(int id, ILogger logger)
         {
             _logger = logger;
+            AccountId = id;
         }
 
         public void Witdraw(decimal amount)
