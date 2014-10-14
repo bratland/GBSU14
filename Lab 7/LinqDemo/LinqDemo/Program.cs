@@ -10,18 +10,39 @@ namespace LinqDemo
     {
         static void Main(string[] args)
         {
-            List<Person> persons = GeneratePersons().ToList();
+            var fib = Fibonacci.Fib().Take(10);
 
-            persons = persons.OrderBy(person => person.Name);
-
-            var x = persons.FirstOrDefault(p => p.Name);
-
-            Console.WriteLine("The chosen one: " + x.Name);
-
-            foreach (var person in persons)
+            foreach (var i in fib)
             {
-                Console.WriteLine(person.Name);
+                Console.WriteLine(i);
             }
+
+            //var persons = GeneratePersons();
+
+            //Console.WriteLine("Tentan komer vara under v46 och 47!");
+
+            //persons = persons.OrderBy(person => person.Name);
+
+            //var x = persons.FirstOrDefault(p => p.Name.StartsWith("A"));
+
+            //var w = from person in persons
+            //    where person.Name.StartsWith("M")
+            //    select person;
+
+
+            //persons.ToList().ForEach(Print);
+
+            //Console.WriteLine("The chosen one: " + x.Name);
+
+            //foreach (var person in persons)
+            //{
+            //    Console.WriteLine(person.Name);
+            //}
+        }
+
+        private static void Print(Person obj)
+        {
+            Console.WriteLine(obj.Name);
         }
 
         private static IEnumerable<Person> GeneratePersons()

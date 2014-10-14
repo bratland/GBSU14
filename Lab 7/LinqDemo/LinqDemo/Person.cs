@@ -8,5 +8,7 @@ namespace LinqDemo
     class Person
     {
         public string Name { get; set; }
+
+        public string PNummer { get; set; }
     }
 }
