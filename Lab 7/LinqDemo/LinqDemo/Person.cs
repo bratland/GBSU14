@@ -5,9 +5,19 @@ using System.Text;
 
 namespace LinqDemo
 {
-    class Person
+    public class Person
     {
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+        public int Age { get; set; }
+        public string PNummer { get; set; }
+        public string City { get; set; }
+    }
+    
+    class Person2
+    {
+        public string FullName { get; set; }
 
         public string PNummer { get; set; }
     }
