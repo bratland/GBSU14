@@ -27,6 +27,12 @@ namespace LinqDemo
 
             persons.Add(new Person{FirstName = "Olle"});
             var persons3 = persons.OrderBy(p => p.FirstName);
+
+
+            var blah = persons.Where(p => p.FirstName.StartsWith("A"))
+                .Where(p => p.LastName.Length > 100)
+                .Where(p => !(p.Age == 10));
+
             
             foreach (var person in persons2)
             {
