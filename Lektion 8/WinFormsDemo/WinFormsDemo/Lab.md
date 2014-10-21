@@ -6,3 +6,4 @@
 * Blogginlägg skall visas med master-detail-relation, där alla kommentarer visas i lista, grid eller liknande.
 * Bygg din applikation så att du får med så många lämpliga komponender du kan. Inte stört många. :)
 * (Bonus) Dela upp i separata projekt.
+* (Bonus) Stöd formatering av texter. Fet, kursiv osv.
