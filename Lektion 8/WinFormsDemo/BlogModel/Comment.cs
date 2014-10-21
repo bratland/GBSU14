@@ -2,7 +2,7 @@
 
 namespace BlogModel
 {
-    public class Comments
+    public class Comment
     {
         public string Text { get; set; }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 using BlogModel;
 
@@ -14,8 +15,8 @@ namespace WinFormsDemo
 
             var customers = new List<BlogEntry>
             {
-                new BlogEntry {Title = "Anders", Id = 25, Comments = new List<Comments> { new Comments{ Text = "Hammare", Date = DateTime.Now}}},
-                new BlogEntry {Title = "Mikael", Id = 50, Comments = new List<Comments> { new Comments{ Text = "Spik", Date = DateTime.Now.AddDays(-2)}}}
+                new BlogEntry {Title = "Anders", Id = 25, Comments = new List<Comment> { new Comment{ Text = "Hammare", Date = DateTime.Now}}},
+                new BlogEntry {Title = "Mikael", Id = 50, Comments = new List<Comment> { new Comment{ Text = "Spik", Date = DateTime.Now.AddDays(-2)}}}
             };
 
             comboBox1.DataSource = customers;
@@ -46,14 +47,13 @@ namespace WinFormsDemo
 
         }
 
-        private void comboBox1_Validating(object sender, CancelEventArgs e)
-        {
-            if (comboBox1.SelectedIndex != 0)
-            {
-                e.Cancel = true;
-            }
 
-            toolStripStatusLabel1.Text = " Välj Anders ;)";
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var comments = new CommentForm();
+            comments.Comment = ((BlogEntry) comboBox1.SelectedItem).Comments.First();
+            comments.ShowDialog();
         }
 
     }

@@ -11,6 +11,6 @@ namespace BlogModel
             return Title + " - " + Id;
         }
 
-        public List<Comments> Comments { get; set; }
+        public List<Comment> Comments { get; set; }
     }
 }

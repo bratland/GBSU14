@@ -40,6 +40,7 @@
             this.snyggMenyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wohooToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -53,7 +54,6 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 11;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.comboBox1.Validating += new System.ComponentModel.CancelEventHandler(this.comboBox1_Validating);
             // 
             // dataGridView1
             // 
@@ -142,11 +142,22 @@
             this.wohooToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.wohooToolStripMenuItem.Text = "Wohoo!";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(418, 310);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 381);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dataGridView1);
@@ -178,6 +189,7 @@
         private System.Windows.Forms.ToolStripMenuItem snyggMenyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wohooToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 
