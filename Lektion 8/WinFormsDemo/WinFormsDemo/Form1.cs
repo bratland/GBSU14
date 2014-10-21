@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.Remoting;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using BlogModel;
 
 namespace WinFormsDemo
 {
@@ -17,39 +12,48 @@ namespace WinFormsDemo
         {
             InitializeComponent();
 
-            var week = new List<string> {"Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"};
-            var customers = new List<Customer>
+            var customers = new List<BlogEntry>
             {
-                new Customer {Name = "Anders", Id = 25},
-                new Customer {Name = "Mikael", Id = 50}
+                new BlogEntry {Title = "Anders", Id = 25, Comments = new List<Comments> { new Comments{ Text = "Hammare", Date = DateTime.Now}}},
+                new BlogEntry {Title = "Mikael", Id = 50, Comments = new List<Comments> { new Comments{ Text = "Spik", Date = DateTime.Now.AddDays(-2)}}}
             };
 
             comboBox1.DataSource = customers;
-            comboBox1.DisplayMember = "Name";
+            comboBox1.DisplayMember = "Title";
             comboBox1.ValueMember= "Id";
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += ((Button) sender).Text;
-        }
+    
 
-        private void button1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //e.KeyChar
-        }
-
-        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
-        {
-            //textBox1.Text = ((Customer)comboBox1.SelectedItem).Name;
-            //textBox2.Text = ((Customer)comboBox1.SelectedItem).Id.ToString();
-            textBox1.Text = comboBox1.SelectedText;
-            textBox2.Text = comboBox1.SelectedValue.ToString();
-        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = ((BlogEntry) comboBox1.SelectedItem).Comments;
+        }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Cool man!";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBox1.SelectedIndex != 0)
+            {
+                e.Cancel = true;
+            }
+
+            toolStripStatusLabel1.Text = " Välj Anders ;)";
         }
 
     }
