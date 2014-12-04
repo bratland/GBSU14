@@ -34,6 +34,10 @@ insert into Posts values
 select * from Posts
 select * from Authors
 
+select count(*) as antal, a.Name from posts p
+inner join Authors a on p.AuthorId = a.Id
+group by AuthorId
+
 select p.Title, p.Body, a.Name from Posts p
 inner join Authors a on p.AuthorId = a.Id
 
