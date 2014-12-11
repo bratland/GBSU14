@@ -46,7 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Author.cs" />
+    <Compile Include="BlogDataLayer.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="EFBlogDataLayer.cs" />
+    <Compile Include="IBlogDataLayer.cs" />
+    <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Standard.cs" />
     <Compile Include="Student.cs" />

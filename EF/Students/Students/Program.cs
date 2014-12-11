@@ -11,28 +11,12 @@ namespace EFSimpleCodeFirstDemo
         static void Main(string[] args)
         {
 
-            var ctx = new StudentContext();
-            
-            //var newStd = new Standard
-            //{ 
-            //    StandardName = "Standard 1", 
-            //    Description = "New Standard" 
-            //};
+            IBlogDataLayer db = new EFBlogDataLayer();
 
-            //var stud = new Student
-            //{
-            //    StudentName = "Andreas"
-            //};
-            //ctx.Students.Add(stud);
-            //ctx.Standards.Add(newStd);
-            //ctx.SaveChanges();
-
-            foreach (var student in ctx.Students.OrderBy(s => s.StudentName).Take(3))
+            foreach (var author in db.GetAuthors())
             {
-                Console.WriteLine(student.StudentName);
+                Console.WriteLine(author);
             }
-            
-
 
             Console.WriteLine("Code first demo successful");
             Console.ReadKey();
