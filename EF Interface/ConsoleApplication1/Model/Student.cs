@@ -1,9 +1,8 @@
-namespace StudentsDataLayer
+﻿namespace Model
 {
-    public partial class Student
+    public class Student
     {
         public int StudentId { get; set; }
-
         public string StudentName { get; set; }
     }
 }

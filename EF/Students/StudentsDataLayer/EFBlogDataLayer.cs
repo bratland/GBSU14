@@ -8,10 +8,10 @@ namespace StudentsDataLayer
 {
     public class EFBlogDataLayer : IBlogDataLayer
     {
-        private StudentContext _db;
+        private MyModel _db;
         public EFBlogDataLayer()
         {
-            _db = new StudentContext();
+            _db = new MyModel();
         }
 
         public List<Post> GetPosts()
