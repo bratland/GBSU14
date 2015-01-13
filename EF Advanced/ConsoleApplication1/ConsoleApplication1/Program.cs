@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +16,12 @@ namespace ConsoleApplication1
             EagerMultiLevel();
             LazyFilter();
             LazyCount();
+
+            var blogs = GetBlogsAsync().Result;
+            foreach (var blog in blogs)
+            {
+                Console.WriteLine(blog.Name);
+            }
         }
 
         private static void LazyCount()
@@ -27,6 +35,7 @@ namespace ConsoleApplication1
                     .Collection(b => b.Posts)
                     .Query()
                     .Count();
+
             }
         }
 
@@ -42,6 +51,18 @@ namespace ConsoleApplication1
                     .Query()
                     .Where(p => p.Tags.Contains("entity-framework"))
                     .Load();
+            }
+        }
+        private async static Task<List<Blog>> GetBlogsAsync()
+        {
+            using (var context = new BloggingContext())
+            {
+                var blog = context.Blogs.Find(1);
+
+                // Load the posts with the 'entity-framework' tag related to a given blog 
+                var blogs = await context.Blogs.ToListAsync();
+
+                return blogs;
             }
         }
 
